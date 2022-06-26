@@ -2,7 +2,9 @@ const body = require("body-parser");
 const express = require("express");
 const cors = require("cors");
 
-let Data = {};
+let Data = {
+  processes: []
+};
 
 const app = express();
 app.use(body.json());
