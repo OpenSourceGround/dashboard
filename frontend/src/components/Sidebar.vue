@@ -19,10 +19,11 @@ import URL from "@/components/SidebarLinkTag.vue";
         <section
           class="p-2 border-b flex space-x-1 items-center border-winkle-200"
         >
-          <h2>Material UI</h2>
+          <h2>Jay's Monitor Dashboard</h2>
         </section>
         <section class="space-y-2 mt-5">
           <URL href="#" name="Dashboard" icon="fa-solid fa-box-archive" />
+          <URL href="#" name="Protection" icon="fa-solid fa-shield-halved" />
           <URL href="#" name="Profiles" icon="fa-solid fa-user-gear" />
         </section>
       </div>

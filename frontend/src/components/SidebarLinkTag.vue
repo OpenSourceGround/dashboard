@@ -13,7 +13,7 @@ export default {
       p-2
       flex
       items-center
-      space-x-1
+      space-x-2
       hover:bg-purp-200
       rounded
       duration-300

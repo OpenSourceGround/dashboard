@@ -2,10 +2,12 @@
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
+import IPLog from "@/components/IPLogs.vue";
 import { getRelativePosition } from "chart.js/helpers";
 import utils from "@/assets/js/utils";
 
 export default {
+  components: { IPLog },
   data() {
     return {};
   },
@@ -108,6 +110,19 @@ export default {
           class="rounded-lg bg-gradient-to-b from-steel-300 to-steel-400 p-5"
         >
           <canvas id="areaChart"></canvas>
+        </section>
+      </div>
+    </section>
+    <section class="mt-5">
+      <div class="grid grid-cols-2 gap-5 w-full">
+        <section class="space-y-2">
+          <IPLog />
+          <IPLog />
+          <IPLog />
+          <IPLog />
+          <IPLog />
+          <IPLog />
+          <IPLog />
         </section>
       </div>
     </section>
