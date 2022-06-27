@@ -114,7 +114,7 @@ export default {
       </div>
     </section>
     <section class="mt-5">
-      <div class="grid grid-cols-2 gap-5 w-full">
+      <div class="grid grid-cols-3 gap-5 w-full">
         <section class="space-y-2">
           <IPLog />
           <IPLog />
