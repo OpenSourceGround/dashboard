@@ -20,6 +20,10 @@ export default {
 @import "@/assets/css/tailwinds.css";
 </style>
 
+<style lang="scss">
+@import "@/assets/scss/index.scss";
+</style>
+
 <template :class=" `bg-${localStorage.theme}-500`">
   <main>
     <div class="px-5">
