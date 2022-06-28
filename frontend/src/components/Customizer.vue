@@ -33,6 +33,14 @@ export default {
             </div>
           </main>
         </section>
+        <section class="">
+          <main>
+            <div>
+              <h2 class="text-xl font-semibold"></h2>
+            </div>
+            <div class="gap-3 mt-3 grid-cols-1 grid"></div>
+          </main>
+        </section>
       </div>
     </section>
   </main>
