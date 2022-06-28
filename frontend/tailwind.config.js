@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.html", "./*/*.vue", "./*/*/*.vue"],
+  content: ["./*.html", "./*/*.vue", "./*/*/*.vue", "./*/*/*/*.vue"],
   theme: {
     backdropFilter: {
       none: "none",

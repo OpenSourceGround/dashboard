@@ -72,20 +72,32 @@ export default {
       });
 
       let ctx1 = document.getElementById("lineChart");
+      let purple = utils.hexToRgb(
+        `#${utils.getThemeColors()[this.localStorage.theme]}`,
+        0.1
+      );
+      let green = utils.hexToRgb(`#${utils.getThemeColors()["steel"]}`, 0.1);
+      let purpleborder = utils.hexToRgb(
+        `#${utils.getThemeColors()[this.localStorage.theme]}`,
+        1
+      );
+      let greenborder = utils.hexToRgb(
+        `#${utils.getThemeColors()["steel"]}`,
+        1
+      );
+      let rcolors = [purple, green];
+      let bordercolors = [purpleborder, greenborder];
       const lineChart = new Chart(ctx1, {
         type: "doughnut",
         data: {
-          labels: ["1", 1, 1],
+          labels: ["USED", "FREE"],
           datasets: [
             {
               label: "Databases",
-              backgroundColor: utils.hexToRgb(
-                colors[this.localStorage.theme],
-                0.1
-              ),
+              backgroundColor: rcolors,
+              borderColor: bordercolors,
               borderWidth: 1,
-              borderColor: utils.hexToRgb(colors[this.localStorage.theme], 1),
-              data: [1, 1, 1],
+              data: [25, 75],
             },
           ],
         },
@@ -199,13 +211,22 @@ export default {
             <canvas id="myChart" class=""></canvas>
           </section>
         </div>
-        <!-- <div>
-          <section
-            class="rounded-lg bg-gradient-to-b from-steel-300 to-steel-400 p-5"
-          >
-            <canvas id="lineChart"></canvas>
+        <div>
+          <section class="flex flex-wrap">
+            <div
+              class="
+                flex flex-wrap
+                rounded-lg
+                bg-gradient-to-b
+                from-steel-300
+                to-steel-400
+                p-5
+              "
+            >
+              <canvas id="lineChart"></canvas>
+            </div>
           </section>
-        </div> -->
+        </div>
       </div>
     </section>
   </main>

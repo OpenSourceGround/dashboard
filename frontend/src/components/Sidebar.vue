@@ -9,7 +9,31 @@ export default {
         {
           name: "Uptime Bot",
           icon: "fa-solid fa-table-tennis-paddle-ball",
-          href: "/uptime",
+          href: "/library/uptime",
+        },
+        {
+          name: "Links Page",
+          icon: "fa-solid fa-paperclip",
+          href: "/library/links-page",
+        },
+      ],
+      SettingsDropdownData: [
+        {
+          name: "Accounts",
+          icon: "fa-solid fa-users",
+          href: "/settings/accounts",
+        },
+        {
+          name: "Customize Panel",
+          icon: "fa-solid fa-pen-nib",
+          href: "/settings/customize",
+        },
+      ],
+      MiscsDropdownData: [
+        {
+          name: "Download Data",
+          icon: "fa-solid fa-file-shield",
+          href: "/misc/download-data",
         },
       ],
       localStorage: localStorage,
@@ -48,12 +72,20 @@ export default {
           <URL href="/" name="Home" icon="fa-solid fa-earth-asia" />
           <URL href="/dashboard" name="Stats" icon="fa-solid fa-chart-simple" />
           <URL href="/todo" name="ToDo List" icon="fa-solid fa-list-check" />
-          <URL href="/customize" name="Customize" icon="fa-solid fa-pen-nib" />
           <Dropdown
-            href="/library"
             name="Library"
             icon="fa-solid fa-book"
             :children="LibraryDropdownData"
+          />
+          <Dropdown
+            name="Settings"
+            icon="fa-solid fa-screwdriver-wrench"
+            :children="SettingsDropdownData"
+          />
+          <Dropdown
+            name="Miscellaneous"
+            icon="fa-solid fa-plus"
+            :children="MiscsDropdownData"
           />
         </section>
       </div>

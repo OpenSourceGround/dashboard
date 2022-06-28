@@ -1,5 +1,5 @@
 <script setup>
-import Master from "@/components/settings/Customizer.vue";
+import Master from "@/components/NotFound.vue";
 </script>
 
 <template>

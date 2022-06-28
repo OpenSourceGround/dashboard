@@ -52,6 +52,7 @@ class Utils {
       blue: "4287F5",
       flush: "D14545",
       apple: "4DC44D",
+      steel: "1D1B25",
       orchid: "DB44D9",
     };
   }
