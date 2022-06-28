@@ -27,7 +27,6 @@ class Utils {
     for (let i = 0; i < length; i++) {
       data.push(Math.floor(min + Math.random() * (max - min + 1)));
     }
-    console.log(data);
     return data;
   }
   fakeColorsArray(length = 25, alpha = 1) {
@@ -37,8 +36,42 @@ class Utils {
         this.hexToRgb(Math.floor(Math.random() * 16777215).toString(16), alpha)
       );
     }
-    console.log(data);
     return data;
+  }
+  setDefaultTheme() {
+    if (!localStorage.theme) {
+      localStorage.theme = "purp";
+    }
+  }
+  getTheme() {
+    return localStorage.theme;
+  }
+  getThemeColors() {
+    return {
+      purp: "6755ED",
+      blue: "4287F5",
+      flush: "D14545",
+      apple: "4DC44D",
+      orchid: "DB44D9",
+    };
+  }
+  loadThemeScrollBar() {
+    let theme = this.getThemeColors()[this.getTheme()];
+    let hex = `#${theme}`;
+    let code = `
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: ${this.hexToRgb(theme, 1)} !important;
+  background: linear-gradient(
+    90deg,
+    ${this.hexToRgb(theme, 1)} 0%,
+    ${this.hexToRgb(theme, 1)} 35%
+  );
+}`;
+
+    let tag = document.createElement("style");
+    tag.innerHTML = code;
+    document.body.appendChild(tag);
   }
 }
 

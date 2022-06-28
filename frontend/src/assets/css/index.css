@@ -10,17 +10,6 @@
   background: #24222e;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgb(128, 113, 240);
-  background: linear-gradient(
-    90deg,
-    rgba(128, 113, 240, 1) 0%,
-    rgba(103, 85, 237, 1) 35%
-  );
-}
-
 body {
   font-family: "Poppins", sans-serif;
 }
