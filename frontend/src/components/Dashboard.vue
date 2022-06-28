@@ -2,12 +2,12 @@
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
+import Stats from "@/components/Stats.vue";
 import utils from "@/assets/js/utils";
 import IPLog from "@/components/IPLogs.vue";
-import TodoList from "@/components/TodoBox.vue";
 
 export default {
-  components: { IPLog, TodoList },
+  components: { IPLog, Stats },
   methods: {
     loadCharts() {
       const colors = utils.getThemeColors();
@@ -152,32 +152,9 @@ export default {
   <main class="">
     <section class="py-5">
       <div class="grid grid-cols-3 gap-5 w-full">
-        <section
-          :class="` rounded-lg
-            bg-gradient-to-r
-            from-${localStorage.theme}-300
-            to-${localStorage.theme}-500
-            p-5`"
-        >
-          <div class="grid grid-cols-2 items-center">
-            <h5 class="text-winkle-300 text-lg">1,000,000</h5>
-            <div>
-              <i class="fa-solid fa-bolt float-right"></i>
-            </div>
-          </div>
-          <div :class="`bg-${localStorage.theme}`">
-            <div
-              style="width: 45%"
-              class="p-0.5 rounded-full bg-winkle-300 mt-3"
-            ></div>
-          </div>
-          <div class="grid grid-cols-2 mt-1 items-center">
-            <h5 class="text-winkle-300">Sales</h5>
-            <div>
-              <span class="float-right">234% ^</span>
-            </div>
-          </div>
-        </section>
+        <Stats percentage="100" value="3425924" length="34" label="Memory" />
+        <Stats percentage="100" value="3425924" length="34" label="Memory" />
+        <Stats percentage="100" value="3425924" length="34" label="Memory" />
       </div>
     </section>
     <section class="">
