@@ -626,6 +626,10 @@ video {
   height: 1.5rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .w-full {
   width: 100%;
 }
@@ -676,6 +680,10 @@ video {
 
 .gap-3 {
   gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -957,6 +965,10 @@ video {
 
 .to-steel-400 {
   --tw-gradient-to: #2B2937;
+}
+
+.to-steel-500 {
+  --tw-gradient-to: #24222E;
 }
 
 .bg-size-200 {

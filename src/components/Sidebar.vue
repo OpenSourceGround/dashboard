@@ -12,9 +12,9 @@ export default {
           href: "/library/uptime",
         },
         {
-          name: "Links Page",
+          name: "My Page",
           icon: "fa-solid fa-paperclip",
-          href: "/library/links-page",
+          href: "/library/my-page",
         },
       ],
       SettingsDropdownData: [
