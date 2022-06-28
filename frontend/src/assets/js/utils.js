@@ -22,6 +22,24 @@ class Utils {
       document.body.appendChild(tag);
     });
   }
+  fakeDatasetsArray(length = 25, min, max) {
+    let data = [];
+    for (let i = 0; i < length; i++) {
+      data.push(Math.floor(min + Math.random() * (max - min + 1)));
+    }
+    console.log(data);
+    return data;
+  }
+  fakeColorsArray(length = 25, alpha = 1) {
+    let data = [];
+    for (let i = 0; i < length; i++) {
+      data.push(
+        this.hexToRgb(Math.floor(Math.random() * 16777215).toString(16), alpha)
+      );
+    }
+    console.log(data);
+    return data;
+  }
 }
 
 export default new Utils();

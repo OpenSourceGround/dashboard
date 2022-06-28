@@ -2,9 +2,9 @@
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
+import utils from "@/assets/js/utils";
 import IPLog from "@/components/IPLogs.vue";
 import { getRelativePosition } from "chart.js/helpers";
-import utils from "@/assets/js/utils";
 
 export default {
   components: { IPLog },
@@ -12,8 +12,8 @@ export default {
     return {};
   },
   mounted() {
-    const numbers = [10, 15, 12, 14, 18, 20, 14, 16, 15];
-    const labels = ["January", "February", "March", "April", "May", "June"];
+    const numbers = utils.fakeDatasetsArray(50, 50, 100);
+    const labels = numbers;
     const data = {
       labels: labels,
       datasets: [
@@ -31,9 +31,9 @@ export default {
       datasets: [
         {
           label: "Databases",
-          backgroundColor: utils.hexToRgb("#45D16A", 0.4),
+          backgroundColor: utils.hexToRgb("#6755ED", 0.1),
           borderWidth: 1,
-          borderColor: utils.hexToRgb("#45D16A", 1),
+          borderColor: utils.hexToRgb("#6755ED", 1),
           data: numbers,
         },
       ],
@@ -43,28 +43,72 @@ export default {
       datasets: [
         {
           label: "Databases",
-          fill: "origin",
-          backgroundColor: utils.hexToRgb("#D14545", 0.4),
+          fill: {
+            target: "origin",
+            above: utils.hexToRgb("#6755ED", 0.1), // Area will be red above the origin
+            below: utils.hexToRgb("#6755ED", 0.1), // And blue below the origin
+          },
+          backgroundColor: utils.hexToRgb("#6755ED", 0.4),
           borderWidth: 1,
-          borderColor: utils.hexToRgb("#D14545", 1),
+          borderColor: utils.hexToRgb("#6755ED", 1),
           data: numbers,
         },
       ],
     };
 
-    const chart = new Chart(document.getElementById("myChart"), {
+    let ctx2 = document.getElementById("myChart");
+    const chart = new Chart(ctx2, {
       type: "bar",
       data: data,
+      options: {},
     });
 
-    const lineChart = new Chart(document.getElementById("lineChart"), {
-      type: "line",
-      data: lineData,
+    let ctx1 = document.getElementById("lineChart");
+    const lineChart = new Chart(ctx1, {
+      type: "doughnut",
+      data: {
+        labels: ["1", 1, 1],
+        datasets: [
+          {
+            label: "Databases",
+            backgroundColor: utils.hexToRgb("#45D16A", 0.1),
+            borderWidth: 1,
+            borderColor: utils.hexToRgb("#45D16A", 1),
+            data: [1, 1, 1],
+          },
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
+        elements: {
+          line: {
+            borderWidth: 3,
+          },
+        },
+      },
     });
 
-    const areaChart = new Chart(document.getElementById("areaChart"), {
+    let ctx = document.getElementById("areaChart");
+    const areaChart = new Chart(ctx, {
       type: "line",
       data: areaData,
+      options: {
+        layout: {
+          padding: {
+            left: -10,
+          },
+        },
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            ticks: {},
+          },
+          y: {
+            ticks: {},
+            beginAtZero: true,
+          },
+        },
+      },
     });
   },
 };
@@ -75,55 +119,116 @@ export default {
     <section class="py-5">
       <div class="grid grid-cols-3 gap-5 w-full">
         <section
-          class="rounded-lg bg-gradient-to-b from-steel-300 to-steel-400 p-5"
+          class="rounded-lg bg-gradient-to-r from-purp-300 to-purp-400 p-5"
         >
-          <h5 class="text-winkle-300 text-lg">1,000,000</h5>
-          <h3 class="text-xs text-purp">Sales</h3>
+          <div class="grid grid-cols-2 items-center">
+            <h5 class="text-winkle-300 text-lg">1,000,000</h5>
+            <div>
+              <i class="fa-solid fa-bolt float-right"></i>
+            </div>
+          </div>
+          <div class="bg-purp-500">
+            <div
+              style="width: 45%"
+              class="p-0.5 rounded-full bg-winkle-300 mt-3"
+            ></div>
+          </div>
+          <div class="grid grid-cols-2 mt-1 items-center">
+            <h5 class="text-winkle-300">Sales</h5>
+            <div>
+              <span class="float-right">234% ^</span>
+            </div>
+          </div>
         </section>
         <section
-          class="rounded-lg bg-gradient-to-b from-steel-300 to-steel-400 p-5"
+          class="rounded-lg bg-gradient-to-r from-purp-300 to-purp-400 p-5"
         >
-          <h5 class="text-winkle-300 text-lg">1,000,000</h5>
-          <h3 class="text-xs text-emerald">Sales</h3>
+          <div class="grid grid-cols-2 items-center">
+            <h5 class="text-winkle-300 text-lg">1,000,000</h5>
+            <div>
+              <i class="fa-solid fa-bolt float-right"></i>
+            </div>
+          </div>
+          <div class="bg-purp-500">
+            <div
+              style="width: 45%"
+              class="p-0.5 rounded-full bg-winkle-300 mt-3"
+            ></div>
+          </div>
+          <div class="grid grid-cols-2 mt-1 items-center">
+            <h5 class="text-winkle-300">Sales</h5>
+            <div>
+              <span class="float-right">234% ^</span>
+            </div>
+          </div>
         </section>
         <section
-          class="rounded-lg bg-gradient-to-b from-steel-300 to-steel-400 p-5"
+          class="rounded-lg bg-gradient-to-r from-purp-300 to-purp-400 p-5"
         >
-          <h5 class="text-winkle-300 text-lg">1,000,000</h5>
-          <h3 class="text-xs text-flush">Sales</h3>
+          <div class="grid grid-cols-2 items-center">
+            <h5 class="text-winkle-300 text-lg">1,000,000</h5>
+            <div>
+              <i class="fa-solid fa-bolt float-right"></i>
+            </div>
+          </div>
+          <div class="bg-purp-500">
+            <div
+              style="width: 45%"
+              class="p-0.5 rounded-full bg-winkle-300 mt-3"
+            ></div>
+          </div>
+          <div class="grid grid-cols-2 mt-1 items-center">
+            <h5 class="text-winkle-300">Sales</h5>
+            <div>
+              <span class="float-right">234% ^</span>
+            </div>
+          </div>
         </section>
       </div>
     </section>
     <section class="">
-      <div class="grid grid-cols-3 gap-5 w-full">
-        <section
-          class="rounded-lg bg-gradient-to-b from-steel-300 to-steel-400 p-5"
-        >
-          <canvas id="myChart"></canvas>
-        </section>
-        <section
-          class="rounded-lg bg-gradient-to-b from-steel-300 to-steel-400 p-5"
-        >
-          <canvas id="lineChart"></canvas>
-        </section>
-        <section
-          class="rounded-lg bg-gradient-to-b from-steel-300 to-steel-400 p-5"
-        >
-          <canvas id="areaChart"></canvas>
-        </section>
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-5 w-full">
+        <div class="col-span-2 flex flex-wrap">
+          <section
+            class="
+              w-full
+              rounded-lg
+              p-3
+              bg-gradient-to-b
+              from-steel-300
+              to-steel-400
+            "
+          >
+            <canvas id="areaChart"></canvas>
+          </section>
+        </div>
+
+        <div class="flex flex-wrap">
+          <section
+            class="
+              w-full
+              rounded-lg
+              bg-gradient-to-b
+              from-steel-300
+              to-steel-400
+              p-5
+            "
+          >
+            <canvas id="myChart" class=""></canvas>
+          </section>
+        </div>
+        <!-- <div>
+          <section
+            class="rounded-lg bg-gradient-to-b from-steel-300 to-steel-400 p-5"
+          >
+            <canvas id="lineChart"></canvas>
+          </section>
+        </div> -->
       </div>
     </section>
     <section class="mt-5">
       <div class="grid grid-cols-3 gap-5 w-full">
-        <section class="space-y-2">
-          <IPLog />
-          <IPLog />
-          <IPLog />
-          <IPLog />
-          <IPLog />
-          <IPLog />
-          <IPLog />
-        </section>
+        <section class="space-y-2"></section>
       </div>
     </section>
   </main>
