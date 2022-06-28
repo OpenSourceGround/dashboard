@@ -53,7 +53,10 @@ class Utils {
       flush: "D14545",
       apple: "4DC44D",
       steel: "1D1B25",
+      wattle: "DBC944",
       orchid: "DB44D9",
+      sorbus: "FC7B03",
+      turquoise: "2CC8D4",
     };
   }
   loadThemeScrollBar() {

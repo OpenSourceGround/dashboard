@@ -40,6 +40,11 @@ export default {
     };
   },
   methods: {
+    welcomeMessage(username) {
+      let date = new Date();
+      let hook = date.getHours() < 12 ? "Good Morning" : "Good Afternoon";
+      return `${hook}, ${username}`;
+    },
     changeTheme(theme) {
       this.localStorage.theme = theme;
     },
@@ -61,11 +66,9 @@ export default {
           rounded-lg
         `"
       >
-        <section
-          class="p-2 border-b flex space-x-1 items-center border-winkle-200"
-        >
-          <h2 class="space-x-2">
-            <i class="fa-solid fa-door-open"></i> Welcome Back, Jareer.
+        <section class="py-2 border-b flex items-center border-winkle-200">
+          <h2 class="">
+            {{ welcomeMessage(`Jareer Abdullah`) }}
           </h2>
         </section>
         <section class="space-y-2 mt-5">
