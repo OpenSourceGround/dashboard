@@ -20,7 +20,7 @@ export default {
     "
     :href="href"
   >
-    <i :class="`${icon} w-3 h-3`"></i>
+    <i :class="`md:block hidden ${icon} w-3 h-3`"></i>
     <h2>{{ name }}</h2>
   </a>
 </template>
