@@ -22,3 +22,7 @@ body {
 *:focus {
     outline: none;
 }
+
+img {
+    filter: grayscale(0);
+}
