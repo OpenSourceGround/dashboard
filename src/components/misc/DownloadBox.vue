@@ -1,6 +1,9 @@
 <script>
 export default {
-  props: {},
+  props: {
+    title: String,
+    text: String,
+  },
   data() {
     return {
       localStorage: localStorage,
@@ -24,8 +27,8 @@ export default {
         "
       >
         <div>
-          <h2>Server Graph Statistics</h2>
-          <h4 class="text-winkle-300 text-xs">35.03MB+</h4>
+          <h2>{{ title }}</h2>
+          <h4 class="text-winkle-300 text-xs">{{ text }}</h4>
         </div>
         <div>
           <button

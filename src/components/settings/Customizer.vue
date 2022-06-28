@@ -14,7 +14,7 @@ export default {
 <template>
   <main class="">
     <section class="mt-5">
-      <div class="grid grid-cols-2 gap-5 w-full">
+      <div class="grid grid-cols-1 gap-5 w-full">
         <section class="">
           <main>
             <div>
