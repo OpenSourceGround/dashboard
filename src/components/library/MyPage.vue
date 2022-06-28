@@ -63,7 +63,7 @@ export default {
                       />
                     </div>
                     <div class="w-full">
-                      <label for="placeholder-gray-300">Contact Email</label>
+                      <label for="placeholder-gray-300">Description</label>
                       <textarea
                         type="text"
                         class="
