@@ -15,13 +15,10 @@ export default {
 };
 </script>
 
-<style lang="css">
-@import "@/assets/css/index.css";
-@import "@/assets/css/tailwinds.css";
-</style>
 
 <style lang="scss">
 @import "@/assets/scss/index.scss";
+@import "@/assets/scss/tailwinds.scss";
 </style>
 
 <template :class=" `bg-${localStorage.theme}-500`">

@@ -1,11 +1,11 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run build-css",
     "preview": "vite preview --port 4173",
-    "css": "npx tailwindcss -i ./src/assets/css/build.css -o ./src/assets/css/tailwinds.css --watch",
-    "build-css": "npx tailwindcss -i ./src/assets/css/build.css -o ./src/assets/css/tailwinds.css --minify",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+    "build": "vite build && npm run build-css",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "css": "npx tailwindcss -i ./src/assets/scss/build.scss -o ./src/assets/scss/tailwinds.scss --watch",
+    "build-css": "npx tailwindcss -i ./src/assets/scss/build.scss -o ./src/assets/scss/tailwinds.css --minify"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
