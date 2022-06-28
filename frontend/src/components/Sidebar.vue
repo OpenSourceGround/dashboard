@@ -22,9 +22,9 @@ import URL from "@/components/SidebarLinkTag.vue";
           <h2>Welcome Back, Jareer.</h2>
         </section>
         <section class="space-y-2 mt-5">
-          <URL href="#" name="Dashboard" icon="fa-solid fa-box-archive" />
-          <URL href="#" name="Protection" icon="fa-solid fa-shield-halved" />
-          <URL href="#" name="Profiles" icon="fa-solid fa-user-gear" />
+          <URL href="/" name="Home" icon="fa-solid fa-earth-asia" />
+          <URL href="/dashboard" name="Stats" icon="fa-solid fa-chart-simple" />
+          <URL href="/todo" name="ToDo List" icon="fa-solid fa-list-check" />
         </section>
       </div>
     </section>
