@@ -11,6 +11,7 @@ export default {
     };
   },
   props: {
+    header: String,
     type: String,
     options: Object,
     data: {
@@ -43,7 +44,8 @@ export default {
 
 <template>
   <main class="w-full">
-    <section class="flex flex-wrap w-full">
+    <section class="">
+      <h1>{{ header }}</h1>
       <div
         class="
           w-full

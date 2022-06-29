@@ -111,6 +111,7 @@ export default {
         <div class="col-span-2 flex flex-wrap">
           <NewChart
             type="line"
+            :header="`My Page Views`"
             :options="charts.ram.options"
             :data="charts.ram.data"
           />
@@ -118,16 +119,18 @@ export default {
         <div>
           <NewChart
             type="bar"
-            :options="charts.ram.options"
+            :header="`Something`"
             :data="charts.ram.data"
+            :options="charts.ram.options"
           />
         </div>
         <section class="flex flex-wrap w-full col-span-3">
           <div>
             <NewChart
               type="doughnut"
-              :options="charts.dough.options"
+              :header="`Ram Usage`"
               :data="charts.dough.data"
+              :options="charts.dough.options"
             />
           </div>
         </section>
