@@ -6,7 +6,16 @@ class Utils {
       16
     )}, ${parseInt(result[3], 16)}, ${alpha})`;
   }
-
+  randomString(length = 10) {
+    var result = "";
+    var characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
   appendJs(links) {
     links.forEach((link) => {
       let tag = document.createElement("script");
@@ -26,6 +35,13 @@ class Utils {
     let data = [];
     for (let i = 0; i < length; i++) {
       data.push(Math.floor(min + Math.random() * (max - min + 1)));
+    }
+    return data;
+  }
+  fakeLabelsArray(length = 25) {
+    let data = [];
+    for (let i = 0; i < length; i++) {
+      data.push(new Date().toLocaleDateString());
     }
     return data;
   }
