@@ -33,12 +33,19 @@ export default {
             </div>
             <div>Manage Node.js Repositories</div>
           </div>
-          <div>
-            <button
-              :class="`bg-${color} bg-opacity-50 float-right px-3 text-xs py-1 rounded-full border-${color} border`"
-            >
-              Manage
-            </button>
+          <div class="space-x-1">
+            <div class="px-1 space-x-1">
+              <button
+                :class="`bg-flush ml-2  bg-opacity-50 float-right px-3 text-xs py-1 rounded border-flush border`"
+              >
+                Delete
+              </button>
+              <button
+                :class="`first-letter bg-orange-500 bg-opacity-50 float-right px-3 text-xs py-1 rounded border-orange-500 border`"
+              >
+                Edit
+              </button>
+            </div>
           </div>
         </div>
       </div>

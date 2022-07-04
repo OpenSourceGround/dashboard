@@ -55,7 +55,7 @@ class Utils {
     return data;
   }
   setDefaultTheme() {
-    if (!localStorage.theme) {
+    if (localStorage.theme == null) {
       localStorage.theme = "purp";
     }
   }

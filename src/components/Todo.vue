@@ -26,7 +26,7 @@ export default {
           </div>
         </div>
         <section class="space-y-3">
-          <TodoList :active="true" />
+          <TodoList />
           <TodoList />
           <TodoList />
           <TodoList :active="true" />

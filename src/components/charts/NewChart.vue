@@ -46,17 +46,7 @@ export default {
   <main class="w-full">
     <section class="">
       <h1>{{ header }}</h1>
-      <div
-        class="
-          w-full
-          flex flex-wrap
-          rounded-lg
-          bg-gradient-to-b
-          from-steel-300
-          to-steel-400
-          p-3
-        "
-      >
+      <div class="w-full flex flex-wrap p-3">
         <canvas :id="id"></canvas>
       </div>
     </section>
