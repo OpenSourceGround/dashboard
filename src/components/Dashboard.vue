@@ -10,15 +10,18 @@ Chart.register(...registerables);
 const Colors = utils.getThemeColors();
 const DatasetData = utils.fakeDatasetsArray(500, 75, 100);
 const DatasetsLabels = utils.fakeLabelsArray(24);
+const themeColor = Colors[localStorage.theme];
+const themeColorRevert = utils
+  .changeHue(Colors[localStorage.theme], 180)
+  .replace("#", "");
 
 let green = utils.hexToRgb(`${Colors["steel"]}`, 0.1);
-let color = utils.hexToRgb(`${Colors[localStorage.theme]}`, 0.1);
+let color = utils.hexToRgb(`${themeColor}`, 0.1);
 
 let greenborder = utils.hexToRgb(`${Colors["steel"]}`, 1);
-let border = utils.hexToRgb(`${Colors[localStorage.theme]}`, 1);
+let border = utils.hexToRgb(`${themeColor}`, 1);
 
-console.log(utils.hexToRgb(Colors[localStorage.theme], 0.1));
-
+console.log(utils.hexToRgb(themeColor, 0.1));
 export default {
   components: { IPLog, Stats, NewChart },
   data() {
@@ -51,27 +54,24 @@ export default {
                 label: "Databases",
                 fill: {
                   target: "origin",
-                  above: utils.hexToRgb(Colors[localStorage.theme], 0.1), // Area will be red above the origin
-                  below: utils.hexToRgb(Colors[localStorage.theme], 0.1), // And blue below the origin
+                  above: utils.hexToRgb(themeColor, 0.1), // Area will be red above the origin
+                  below: utils.hexToRgb(themeColor, 0.1), // And blue below the origin
                 },
-                backgroundColor: utils.hexToRgb(
-                  Colors[localStorage.theme],
-                  0.4
-                ),
+                backgroundColor: utils.hexToRgb(themeColor, 0.4),
                 borderWidth: 1,
-                borderColor: utils.hexToRgb(Colors[localStorage.theme], 1),
+                borderColor: utils.hexToRgb(themeColor, 1),
                 data: DatasetData,
               },
               {
                 label: "Databases",
                 fill: {
                   target: "origin",
-                  above: utils.hexToRgb(Colors["apple"], 0.1), // Area will be red above the origin
-                  below: utils.hexToRgb(Colors["apple"], 0.1), // And blue below the origin
+                  above: utils.hexToRgb(themeColorRevert, 0.2), // Area will be red above the origin
+                  below: utils.hexToRgb(themeColorRevert, 0.1), // And blue below the origin
                 },
-                backgroundColor: utils.hexToRgb(Colors["apple"], 0.4),
+                backgroundColor: utils.hexToRgb(themeColorRevert, 0.4),
                 borderWidth: 1,
-                borderColor: utils.hexToRgb(Colors["apple"], 1),
+                borderColor: utils.hexToRgb(themeColorRevert, 1),
                 data: utils.fakeDatasetsArray(500, 75, 100),
               },
             ],
@@ -97,12 +97,12 @@ export default {
                 borderWidth: 1,
                 data: [50, 50],
                 borderColor: [
+                  utils.hexToRgb(themeColor, 1),
                   utils.hexToRgb(Colors["steel"], 1),
-                  utils.hexToRgb(Colors[localStorage.theme], 1),
                 ],
                 backgroundColor: [
+                  utils.hexToRgb(themeColor, 0.4),
                   utils.hexToRgb(Colors["steel"], 0.4),
-                  utils.hexToRgb(Colors[localStorage.theme], 0.4),
                 ],
               },
               {
@@ -111,11 +111,11 @@ export default {
                 data: [50, 50],
                 borderColor: [
                   utils.hexToRgb(Colors["steel"], 1),
-                  utils.hexToRgb(Colors["apple"], 1),
+                  utils.hexToRgb(themeColorRevert, 1),
                 ],
                 backgroundColor: [
                   utils.hexToRgb(Colors["steel"], 0.4),
-                  utils.hexToRgb(Colors["apple"], 0.4),
+                  utils.hexToRgb(themeColorRevert, 0.4),
                 ],
               },
             ],

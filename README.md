@@ -1,6 +1,8 @@
 # Dashboard - Frontend
 
 ![Image](./temp/preview.png)
+![Image](./temp/preview2.png)
+![Image](./temp/preview3.png)
 
 ## Installation
 

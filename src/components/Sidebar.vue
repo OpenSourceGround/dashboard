@@ -7,11 +7,6 @@ export default {
     return {
       LibraryDropdownData: [
         {
-          name: "Uptime Bot",
-          icon: "fa-solid fa-table-tennis-paddle-ball",
-          href: "/library/uptime",
-        },
-        {
           name: "My Page",
           icon: "fa-solid fa-paperclip",
           href: "/library/my-page",

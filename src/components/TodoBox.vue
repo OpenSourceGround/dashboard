@@ -1,4 +1,11 @@
 <script>
+import utils from "@/assets/js/utils";
+
+const Colors = utils.getThemeColors();
+const themeColorRevert = utils
+  .changeHue(Colors[localStorage.theme], 180)
+  .replace("#", "");
+
 export default {
   props: {
     title: {
@@ -10,6 +17,8 @@ export default {
   },
   data() {
     return {
+      utils: utils,
+      themeColorRevert: themeColorRevert,
       color: this.active === true ? `emerald` : `flush`,
     };
   },
@@ -39,11 +48,6 @@ export default {
                 :class="`bg-flush ml-2  bg-opacity-50 float-right px-3 text-xs py-1 rounded border-flush border`"
               >
                 Delete
-              </button>
-              <button
-                :class="`first-letter bg-orange-500 bg-opacity-50 float-right px-3 text-xs py-1 rounded border-orange-500 border`"
-              >
-                Edit
               </button>
             </div>
           </div>
