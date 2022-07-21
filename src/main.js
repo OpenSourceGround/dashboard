@@ -9,10 +9,12 @@ app.mount("#app");
 
 utils.loadThemeScrollBar();
 utils.setDefaultTheme("purp");
+
 utils.appendJs([
   `https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js`,
   `https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js`,
 ]);
+
 utils.appendCss([
   `https://unicons.iconscout.com/release/v4.0.0/css/solid.css`,
   `https://unicons.iconscout.com/release/v4.0.0/css/line.css`,
