@@ -4,7 +4,7 @@ import { Chart, registerables } from "chart.js";
 import utils from "@/assets/js/utils";
 import Stats from "@/components/Stats.vue";
 import IPLog from "@/components/IPLogs.vue";
-import NewChart from "@/components/charts/NewChart.vue";
+import NewChart from "@/components/NewChart.vue";
 
 Chart.register(...registerables);
 const Colors = utils.getThemeColors();
